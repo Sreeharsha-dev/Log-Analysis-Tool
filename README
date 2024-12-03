@@ -1,0 +1,56 @@
+# Log Analysis Tool
+
+## Overview
+
+This Log Analysis Tool processes web server log data to extract useful insights, including:
+
+1. **IP Requests**: Count the number of requests per IP address.
+2. **Most Frequent Endpoint**: Identify the most accessed endpoint in the logs.
+3. **Suspicious Activity**: Detect IP addresses with multiple failed login attempts (401 errors).
+
+The tool can save the analysis results to a CSV file for easy sharing or further processing.
+
+## Features
+
+- **IP Requests**: Displays the number of requests made by each IP address in descending order.
+- **Most Frequent Endpoint**: Shows the endpoint that received the highest number of accesses.
+- **Suspicious Activity**: Detects IP addresses that made more than a specified number of failed login attempts (default threshold is 5). Results can be filtered based on this threshold.
+- **CSV Export**: Allows saving all results (IP requests, most frequent endpoint, suspicious activity) to a CSV file.
+
+## Requirements
+
+- Python 3.x
+- No additional dependencies required. The built-in `re`, `collections`, and `csv` modules are used.
+
+## How to Use
+
+1. **Run the script**:
+   To run the log analysis tool, execute the Python script. The tool will prompt you for the log file path and present the following options:
+
+   - **IP Requests**: View the IP addresses and their corresponding request counts.
+   - **Most Frequent Endpoint**: See the most accessed endpoint and its access count.
+   - **Suspicious Activity**: View IP addresses with failed login attempts exceeding the threshold.
+   - **All Actions**: Perform all analyses (IP requests, most frequent endpoint, and suspicious activity).
+   - **Save Results to CSV**: Save the results to a CSV file.
+   - **Exit**: Exit the tool.
+
+2. **CSV Export**:
+   After selecting the "Save Results to CSV" option, the results will be saved to a file named `log_analysis_results.csv` (or another filename of your choice).
+
+## Example Usage
+
+```bash
+$ python log_analysis_tool.py
+Log Analysis Tool
+------------------
+Please enter the path to your log file (e.g., sample.log): /path/to/logfile.log
+
+Options:
+1. IP Requests
+2. Endpoints Analysis
+3. Suspicious Activity
+4. All Actions (1, 2, and 3)
+5. Save Results to CSV File
+6. Exit
+Please select an option: 5
+Results saved to log_analysis_results.csv
