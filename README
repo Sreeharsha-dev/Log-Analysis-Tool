@@ -1,43 +1,53 @@
-# Log Analysis Tool
+# Log Analysis Tool 📊
 
-## Overview
+## Overview 🧑‍💻
 
-This Log Analysis Tool processes web server log data to extract useful insights, including:
+Welcome to the **Log Analysis Tool**! This Python script helps you process and analyze web server log files to extract key insights, including:
 
-1. **IP Requests**: Count the number of requests per IP address.
-2. **Most Frequent Endpoint**: Identify the most accessed endpoint in the logs.
-3. **Suspicious Activity**: Detect IP addresses with multiple failed login attempts (401 errors).
+- **IP Requests**: Count the number of requests made by each IP address.
+- **Most Frequent Endpoint**: Identify the most frequently accessed endpoint in the logs.
+- **Suspicious Activity**: Detect IP addresses with multiple failed login attempts (401 errors).
 
-The tool can save the analysis results to a CSV file for easy sharing or further processing.
+You can save the results in a CSV file for easy sharing or further analysis.
 
-## Features
+---
 
-- **IP Requests**: Displays the number of requests made by each IP address in descending order.
-- **Most Frequent Endpoint**: Shows the endpoint that received the highest number of accesses.
-- **Suspicious Activity**: Detects IP addresses that made more than a specified number of failed login attempts (default threshold is 5). Results can be filtered based on this threshold.
-- **CSV Export**: Allows saving all results (IP requests, most frequent endpoint, suspicious activity) to a CSV file.
+## Features 🚀
 
-## Requirements
+- **IP Requests**: List the number of requests per IP address, sorted in descending order.
+- **Most Frequent Endpoint**: Identify the endpoint that has received the most accesses.
+- **Suspicious Activity**: Flag IP addresses that have more than a certain number of failed login attempts (default threshold: 5).
+- **CSV Export**: Save the results to a CSV file, which includes IP requests, frequent endpoints, and suspicious activity.
 
-- Python 3.x
-- No additional dependencies required. The built-in `re`, `collections`, and `csv` modules are used.
+---
 
-## How to Use
+## Requirements ⚙️
 
-1. **Run the script**:
-   To run the log analysis tool, execute the Python script. The tool will prompt you for the log file path and present the following options:
+- Python 3.x (compatible with Python 3.6+)
+- No external dependencies required (uses built-in libraries: `re`, `collections`, `csv`)
 
-   - **IP Requests**: View the IP addresses and their corresponding request counts.
-   - **Most Frequent Endpoint**: See the most accessed endpoint and its access count.
-   - **Suspicious Activity**: View IP addresses with failed login attempts exceeding the threshold.
-   - **All Actions**: Perform all analyses (IP requests, most frequent endpoint, and suspicious activity).
-   - **Save Results to CSV**: Save the results to a CSV file.
-   - **Exit**: Exit the tool.
+---
 
-2. **CSV Export**:
-   After selecting the "Save Results to CSV" option, the results will be saved to a file named `log_analysis_results.csv` (or another filename of your choice).
+## How to Use 🔧
 
-## Example Usage
+1. **Run the script**: 
+   Start the tool by running the Python script. You'll be prompted to input the path to the log file.
+
+2. **Choose an option**:
+   After entering the log file path, you'll see the following options:
+   - **1. IP Requests**: View the number of requests made by each IP.
+   - **2. Endpoints Analysis**: See which endpoint was accessed the most.
+   - **3. Suspicious Activity**: View IPs with multiple failed login attempts (401 errors).
+   - **4. All Actions**: Run all analyses (IP requests, most frequent endpoint, suspicious activity).
+   - **5. Save Results to CSV**: Save the results in a CSV file.
+   - **6. Exit**: Exit the tool.
+
+3. **Export to CSV**:
+   Choose option 5 to export all results (IP requests, most frequent endpoint, and suspicious activity) to a file named `log_analysis_results.csv`.
+
+---
+
+## Example Usage 🎯
 
 ```bash
 $ python log_analysis_tool.py
@@ -52,5 +62,6 @@ Options:
 4. All Actions (1, 2, and 3)
 5. Save Results to CSV File
 6. Exit
+
 Please select an option: 5
 Results saved to log_analysis_results.csv
